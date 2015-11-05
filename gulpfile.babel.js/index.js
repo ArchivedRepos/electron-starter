@@ -19,6 +19,8 @@ requireDir('./tasks', { recurse: true });
 
 gulp.task('core', gulpsequence('clean', 'copy', 'webpack'));
 
+gulp.task('test', gulpsequence('core', 'electron'));
+
 gulp.task('default', gulpsequence('core', 'browserSync', ['webpack', 'copy']));
 
 gulp.task('production', gulpsequence('core', 'minify'));
