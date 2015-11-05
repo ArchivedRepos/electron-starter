@@ -28,7 +28,8 @@ module.exports = {
           'babel-loader'
         ]
       }]
-    }
+    },
+    target: 'atom'
   },
   sass: {
     settings: {
