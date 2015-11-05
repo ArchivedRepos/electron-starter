@@ -6,6 +6,7 @@ var port = 3000;
 var shouldWatch = args.watch;
 
 module.exports = {
+  bsUrl: '',
   watch: shouldWatch,
   src: src,
   dest: dest,
