@@ -13,8 +13,7 @@ import watch from 'gulp-watch';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'gulp-autoprefixer';
-import jshint from 'gulp-jshint';
-import stylish from 'jshint-stylish';
+import eslint from 'gulp-eslint';
 
 gulp.task('copy', function() {
   var srcFiles = [
@@ -25,8 +24,8 @@ gulp.task('copy', function() {
   ];
 
   var doLint = lazypipe()
-    .pipe(jshint)
-    .pipe(jshint.reporter, stylish)
+    .pipe(eslint)
+    .pipe(eslint.format)
     .pipe(babel);
 
   var doScss = lazypipe()
