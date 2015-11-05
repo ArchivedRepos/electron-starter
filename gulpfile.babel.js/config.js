@@ -30,24 +30,11 @@ module.exports = {
       }]
     }
   },
-  browserSync: {
-    server: {
-      baseDir: dest,
-      port: port
-    }//,
-    //files: [dest + '/dist/**']
-  },
   sass: {
     settings: {
       sourceComments: 'map',
       imagePath: '/img' // Used by the image-url helper
     }
-  },
-  appx: {
-    src: src + '/AppxManifest.xml'
-  },
-  ngrok: {
-    port: port
   },
   production: {
     cssSrc: dest + '/**/*.css',

@@ -1,4 +1,4 @@
-')use strict';
+'use strict';
 import config from '../config';
 
 import gulp from 'gulp';
@@ -6,7 +6,7 @@ import gulpif from 'gulp-if';
 import lazypipe from 'lazypipe';
 import path from 'path';
 import gutil from 'gulp-util';
-
+import useref from 'gulp-useref';
 import babel from 'gulp-babel';
 import changed from 'gulp-changed';
 import watch from 'gulp-watch';
@@ -37,20 +37,20 @@ gulp.task('copy', done => {
   // Seems to be necessary
   var doWatch = config.watch
     ? lazypipe().pipe(watch, srcFiles)
-    : lazypipe().pipe(gutil.noop);
+    : lazypipe().pipe(useref);
 
 
   if (config.watch) {
     gutil.log(gutil.colors.cyan('copy'), 'task watching files...');
   }
 
-  done();
-
-  return gulp.src(srcFiles)
+  gulp.src(srcFiles)
     //.pipe(gulpif(argv.watch, doWatch()))
     .pipe(doWatch())
     .pipe(changed(config.dest))
     .pipe(gulpif('*.scss', doScss()))
     .pipe(gulpif('*.js', doLint()))
     .pipe(gulp.dest(config.dest))
+
+  done();
 });

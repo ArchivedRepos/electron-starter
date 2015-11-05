@@ -5,6 +5,7 @@ var browserSync = require('browser-sync').create();
 
 
 gulp.task('browserSync', (done) => {
+
   const options = {
     ui: false,
     port: 35829,
@@ -13,7 +14,6 @@ gulp.task('browserSync', (done) => {
     notify: false,
     logSnippet: false,
     socket: {
-      // Use the actual port here.
       domain: getRootUrl
     }
   };

@@ -1,3 +1,3 @@
-let x = () => {console.log('wsdftf')}
+let x = () => {console.log('test')}
 
 x();
