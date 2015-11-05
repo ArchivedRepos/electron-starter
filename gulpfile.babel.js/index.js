@@ -13,18 +13,18 @@
 import gulp from 'gulp';
 import gulpsequence from 'gulp-sequence';
 import requireDir from 'require-dir';
+import config from './config';
 
 // Require all tasks in gulp/tasks, including subfolders
 requireDir('./tasks', { recurse: true });
 
-gulp.task('core', gulpsequence('clean', 'copy', 'webpack'));
+gulp.task('core', gulpsequence('clean', ['copy', 'webpack']));
 
-gulp.task('test', gulpsequence('core', 'electron'));
+gulp.task('test', gulpsequence('default', 'electron'));
 
-gulp.task('default', gulpsequence('core', 'browserSync', ['webpack', 'copy']));
+gulp.task('watch', () => { config.watch = true });
+
+gulp.task('default', gulpsequence('watch', 'core', 'browserSync'));
 
 gulp.task('production', gulpsequence('core', 'minify'));
 
-gulp.task('appx', gulpsequence('manifest', 'appxregister'));
-
-gulp.task('appx:dev', gulpsequence('core','browserSync', ['webpack', 'copy', 'appx']));

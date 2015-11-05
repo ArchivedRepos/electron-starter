@@ -17,7 +17,7 @@ gulp.task('webpack', function(done) {
       if (err) {
         console.log(err);
       }
-      done();
     });
   }
+  done();
 });

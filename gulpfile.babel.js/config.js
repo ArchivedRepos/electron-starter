@@ -6,7 +6,7 @@ var port = 3000;
 var shouldWatch = args.watch;
 
 module.exports = {
-  bsUrl: '',
+  env: {},
   watch: shouldWatch,
   src: src,
   dest: dest,
@@ -48,13 +48,6 @@ module.exports = {
   },
   ngrok: {
     port: port
-  },
-  browserify: {
-    bundleConfigs: [{
-      entries: src + '/bundles/bundle.js',
-      dest: dest + '/bundles',
-      outputName: 'bundle.js'
-    }]
   },
   production: {
     cssSrc: dest + '/**/*.css',

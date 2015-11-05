@@ -15,7 +15,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'gulp-autoprefixer';
 import eslint from 'gulp-eslint';
 
-gulp.task('copy', function() {
+gulp.task('copy', done => {
   var srcFiles = [
     path.join(config.src, '**/**'),
     '!' + path.join(config.src, 'bundles/**'),
@@ -43,6 +43,8 @@ gulp.task('copy', function() {
   if (config.watch) {
     gutil.log(gutil.colors.cyan('copy'), 'task watching files...');
   }
+
+  done();
 
   return gulp.src(srcFiles)
     //.pipe(gulpif(argv.watch, doWatch()))
