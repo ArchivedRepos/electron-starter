@@ -1,7 +1,7 @@
 {
   "name": "electron-starter",
-  "version": "0.0.2",
-  "description": "Gulp build system for Windows 10 Apps",
+  "version": "0.0.1",
+  "description": "Gulp build system for Electron Apps",
   "main": "./dist/main.js",
   "bin": {
     "electron": "./node_modules/.bin/electron"
