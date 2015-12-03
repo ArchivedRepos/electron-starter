@@ -10,15 +10,6 @@
     },
     "github-electron/github-electron.d.ts": {
       "commit": "715df764419937a75a25dcd76bfc954157bc7b96"
-    },
-    "orchestrator/orchestrator.d.ts": {
-      "commit": "78d36dd49b6b55b9fdfe61776a12bf05c8b07777"
-    },
-    "gulp/gulp.d.ts": {
-      "commit": "78d36dd49b6b55b9fdfe61776a12bf05c8b07777"
-    },
-    "q/Q.d.ts": {
-      "commit": "78d36dd49b6b55b9fdfe61776a12bf05c8b07777"
     }
   }
 }

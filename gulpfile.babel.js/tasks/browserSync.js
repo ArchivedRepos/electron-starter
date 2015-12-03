@@ -2,7 +2,7 @@
 
 import {create as createBSync} from 'browser-sync';
 import config from '../config';
-import * as gulp from 'gulp';
+import gulp from 'gulp';
 const browserSync = createBSync();
 
 gulp.task('browserSync', done => {
