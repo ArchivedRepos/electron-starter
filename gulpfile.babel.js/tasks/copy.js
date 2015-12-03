@@ -1,10 +1,10 @@
 'use strict';
 import config from '../config';
 
-import gulp from 'gulp';
+import * as gulp from 'gulp';
 import gulpif from 'gulp-if';
 import lazypipe from 'lazypipe';
-import path from 'path';
+import * as path from 'path';
 import gutil from 'gulp-util';
 import useref from 'gulp-useref';
 import babel from 'gulp-babel';
@@ -16,26 +16,26 @@ import autoprefixer from 'gulp-autoprefixer';
 import eslint from 'gulp-eslint';
 
 gulp.task('copy', done => {
-  var srcFiles = [
+  const srcFiles = [
     path.join(config.src, '**/**'),
     '!' + path.join(config.src, 'bundles/**'),
     '!' + path.join(config.src, 'AppxManifest.xml'),
     '!' + path.join(config.src, '**/.*')
   ];
 
-  var doLint = lazypipe()
+  const doLint = lazypipe()
     .pipe(eslint)
     .pipe(eslint.format)
     .pipe(babel);
 
-  var doScss = lazypipe()
+  const doScss = lazypipe()
     .pipe(sourcemaps.init)
     .pipe(sass, config.sass.settings)
     .pipe(autoprefixer, { browsers: ['last 2 version'] })
     .pipe(sourcemaps.write);
 
   // Seems to be necessary
-  var doWatch = config.watch
+  const doWatch = config.watch
     ? lazypipe().pipe(watch, srcFiles)
     : lazypipe().pipe(useref);
 

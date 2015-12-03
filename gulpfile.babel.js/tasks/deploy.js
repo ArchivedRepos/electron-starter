@@ -1,8 +1,8 @@
-var gulp    = require('gulp');
-var ghPages = require('gulp-gh-pages');
-var config = require('../config').deploy;
+import * as gulp from 'gulp';
+import ghPages from 'gulp-gh-pages';
+import config from '../config';
 
-gulp.task('deploy', function() {
-  return gulp.src(config.src)
+gulp.task('deploy', () => {
+  return gulp.src(config.deploy.src)
   .pipe(ghPages())
 });

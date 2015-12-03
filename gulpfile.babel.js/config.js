@@ -1,11 +1,10 @@
-var args = require('yargs').argv;
-var dest = './dist';
-var src = './src';
-var port = 3000;
+import {argv as args} from 'yargs';
+const dest = './dist';
+const src = './src';
+const port = 3000;
+const shouldWatch = args.watch;
 
-var shouldWatch = args.watch;
-
-module.exports = {
+export default {
   env: {},
   watch: shouldWatch,
   src: src,

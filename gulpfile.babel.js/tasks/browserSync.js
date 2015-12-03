@@ -1,11 +1,11 @@
 'use strict';
-var config = require('../config');
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
 
+import {create as createBSync} from 'browser-sync';
+import config from '../config';
+import * as gulp from 'gulp';
+const browserSync = createBSync();
 
-gulp.task('browserSync', (done) => {
-
+gulp.task('browserSync', done => {
   const options = {
     ui: false,
     port: 35829,

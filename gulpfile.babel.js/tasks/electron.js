@@ -1,5 +1,5 @@
-import gulp from 'gulp';
-import path from 'path';
+import * as gulp from 'gulp';
+import * as path from 'path';
 import config from '../config';
 import {exec} from 'child_process';
 
